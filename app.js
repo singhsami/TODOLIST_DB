@@ -119,8 +119,8 @@ List.findOneAndUpdate({name:listName},{$pull:{items:{_id:checkboxId}}},(err,foun
 app.get("/work",(req,res)=>{
   res.render("list",{listTitle: "Worklist",newListItems:workItems})
 })
-
-app.listen(3000,(req,res)=>{
+const PORT=process.env.PORT || 3000
+app.listen(PORT,(req,res)=>{
     console.log("Server is running on port 3000");
 })
 
